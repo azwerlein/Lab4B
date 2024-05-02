@@ -6,13 +6,12 @@ namespace Mod3LabB
     [Table("question")]
     public class Question
     {
-        [PrimaryKey, AutoIncrement, Column("_id")]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        [MaxLength(200), Unique]
+        [MaxLength(200)]
         public string QuestionText { get; set; }
-        [Unique]
         public int Score { get; set; }
-        [MaxLength(50), Unique]
+        [MaxLength(50)]
         public string Image { get; set; }
         
     }

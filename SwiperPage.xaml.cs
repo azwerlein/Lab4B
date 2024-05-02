@@ -47,7 +47,7 @@ public partial class SwiperPage : ContentPage
     private void AskNextQuestion()
     {
         SwipeQuizOutput.Text = Questions[QuestionsAsked].QuestionText;
-        SwipeImage.Source = Questions[QuestionsAsked].Image + ".png";
+        SwipeImage.Source = Questions[QuestionsAsked].Image + ".jpg";
         QuestionsAsked++;
     }
 

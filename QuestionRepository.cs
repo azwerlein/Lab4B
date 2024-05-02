@@ -6,6 +6,7 @@ public class QuestionRepository
 {
     
     private SQLiteConnection _connection;
+    private string _filePath = Path.Combine(FileSystem.AppDataDirectory, "questions.db3");
 
     public QuestionRepository()
     {
@@ -18,7 +19,7 @@ public class QuestionRepository
         {
             return;
         }
-        _connection = new SQLiteConnection("questions");
+        _connection = new SQLiteConnection(_filePath);
         _connection.DropTable<Question>();
         _connection.CreateTable<Question>();
         InitQuestions();
