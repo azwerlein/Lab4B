@@ -1,4 +1,5 @@
-﻿namespace Mod3LabB
+﻿
+namespace Mod3LabB
 {
     public partial class MainPage : ContentPage
     {
@@ -6,16 +7,11 @@
         int TotalScore = 0;
         int QuestionsAsked = 0;
 
+
         public MainPage()
         {
-            // Team members: Zachery Schmitt, Jake Whitmore, Samuel Hooper
-            Questions =
-            [
-                new Question("Do you like to run?", 1, "running"),
-                new Question("Do you like to swim?", 1, "swiming"),
-                new Question("Do you work out?", 2, "workingout"),
-                new Question("Do ride a bike?", 1, "biking"),
-            ];
+            QuestionRepository db = new QuestionRepository();
+            Questions = db.GetAllQuestions();
             InitializeComponent();
             AskNextQuestion();
         }

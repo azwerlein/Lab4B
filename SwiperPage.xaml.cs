@@ -8,13 +8,8 @@ public partial class SwiperPage : ContentPage
 
     public SwiperPage()
 	{
-        Questions =
-        [
-            new Question("Do you like to run?", 1, "running"),
-            new Question("Do you like to swim?", 1, "swiming"),
-            new Question("Do you work out?", 2, "workingout"),
-            new Question("Do ride a bike?", 1, "biking"),
-        ];
+        QuestionRepository db = new QuestionRepository();
+        Questions = db.GetAllQuestions();
         InitializeComponent();
         AskNextQuestion();
     }
